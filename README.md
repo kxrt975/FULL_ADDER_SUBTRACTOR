@@ -24,9 +24,6 @@ Carry = AB + ACin + BCin
 
 ![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/0f30ba51-5ffb-4198-845f-18e054f675e7)
 
-![WhatsApp Image 2024-12-03 at 13 27 49_046d7555](https://github.com/user-attachments/assets/29379be5-0bb5-4678-8f43-91649d65fa56)
-
-
 **Figure -1 FULL ADDER**
 
 **Full Subtractor**
@@ -34,8 +31,6 @@ Carry = AB + ACin + BCin
 A full subtractor is a combinational circuit that performs subtraction involving three bits, namely minuend, subtrahend, and borrow-in . It accepts three inputs: minuend, subtrahend and a borrow bit and it produces two outputs: difference and borrow.
 
 ![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/02b24f51-ab51-4304-9ad6-7b81ffc1ead5)
-
-![WhatsApp Image 2024-12-03 at 13 27 49_70ed80be](https://github.com/user-attachments/assets/c6bd7607-411b-4db9-b9f9-3378dcfb39d9)
 
 
 Diff = A ⊕ B ⊕ Bin 
@@ -53,8 +48,6 @@ Borrow out = A'Bin + A'B + BBin
  ![Screenshot 2024-12-03 143516](https://github.com/user-attachments/assets/b0a56d99-3606-4b62-8ad8-b9c70438c298)
 
 
-
-
 **Procedure**
 
 Write the detailed procedure here
@@ -62,18 +55,52 @@ Write the detailed procedure here
 **Program:**
 
  Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+
+Full adder
+
+ module fa(a,b,cin,sum,carry);
+ 
+ input a,b,cin;
+ 
+ output sum,carry;
+ 
+ assign sum=( (a ^ b)^cin);
+ 
+ assign carry= ( (a & b)| ( cin &(a ^ b )));
+ 
+ endmodule
+
+ Full subtractor
+
+ module fs(a,b,bin,difference,borrow);
+ 
+ input a,b,bin;
+ 
+ output difference,borrow;
+ 
+ assign difference= ( (a ^ b)^bin);
+ 
+ assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+ 
+ endmodule
+
+ 
 Developed by: R.karthik padmanaban
 RegisterNumber:24001743
 
 **RTL Schematic**
 
-![WhatsApp Image 2024-12-03 at 13 27 55_eea6b814](https://github.com/user-attachments/assets/5075033d-1a71-4448-a457-aef9f3dc526a)
+![WhatsApp Image 2024-12-03 at 13 27 49_046d7555](https://github.com/user-attachments/assets/29379be5-0bb5-4678-8f43-91649d65fa56)
 
-![WhatsApp Image 2024-12-03 at 13 27 48_339340d4](https://github.com/user-attachments/assets/fccc9fbf-befa-48ee-aef0-7e1fdb434008)
-
+![WhatsApp Image 2024-12-03 at 13 27 49_70ed80be](https://github.com/user-attachments/assets/c6bd7607-411b-4db9-b9f9-3378dcfb39d9)
 
 
 **Output Timing Waveform**
+
+![Screenshot 2024-12-09 194106](https://github.com/user-attachments/assets/c97307ae-10c6-4107-937c-3c72bc15aff7)
+
+![Screenshot 2024-12-09 194200](https://github.com/user-attachments/assets/5ddda646-eb3f-4a01-a58b-483d42f5b875)
+
 
 **Result:**
 
